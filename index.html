@@ -25,20 +25,21 @@
 <!--Bootstraps, fonts, and jquery libraries already added-->
 
   <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
+    <header class="jumbotron bg-primary">
+      <h1 class="display-3 text-white">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <!--Mockup looks like from 9:00am to 5:00pm (9-12 blocks)-->
       <div class = "row">
-          <div class ="col-xs">Time</div>
-          <textarea class ="col-xs"></textarea>
-          <button class="saveBtn col-xs-2 btn"></button>
+          <h2 class = "col-sm-2 bg-primary">Time</h2>
+          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <button class="saveBtn col-sm-2 btn"></button>
       </div>
     
-      <p><input type="text" id="datepicker"/></p>
+      
     </div>
     <script src="./assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
