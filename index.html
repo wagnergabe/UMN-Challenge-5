@@ -131,7 +131,7 @@ $("#04 .description").val(localStorage.getItem("04"));
 $("#05 .description").val(localStorage.getItem("05"));
 
             function colorChange() {
-            var currentTime = $(".currentday");
+            var currentTime = moment().hour();
             $(".time-block").each(function () {
                 var timeStatus = parseInt($(this).attr("id"));
                 if(timeStatus < currentTime) {
