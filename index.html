@@ -41,48 +41,48 @@
       <!--"In the United States, Canada, United Kingdom, and Australia, the hours between 9 am and 5 pm (the traditional "9 to 5") are typically considered to be standard business hours."(wiki)-->
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour">9:00AM</h2>
-          <textarea class ="description col-sm-8"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="description col-sm-9"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour">10:00AM</h2>
-          <textarea class ="col-sm-8 descrition"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="col-sm-9 descrition"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour" >11:00AM</h2>
-          <textarea class ="descrition col-sm-8"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="descrition col-sm-9"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour">12:00AM</h2>
-          <textarea class ="col-sm-8 description"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="col-sm-9 description"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour">1:00PM</h2>
-          <textarea class ="col-sm-8 description"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="col-sm-9 description"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour">2:00PM</h2>
-          <textarea class ="col-sm-8 description"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="col-sm-9 description"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour">3:00PM</h2>
-          <textarea class ="col-sm-8 description"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="col-sm-9 description"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour">4:00PM</h2>
-          <textarea class ="col-sm-8 description"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="col-sm-9 description"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
           <h2 class = "col-sm-2 hour">5:00PM</h2>
-          <textarea class ="col-sm-8 description"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
+          <textarea class ="col-sm-9 description"></textarea>
+          <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
 
 
@@ -107,15 +107,24 @@
             updateTime();
 
             //color changer
-
+            function colorChange() {
             var currentTime = clockEl;
             $(".time-block").each(function () {
                 var timeStatus = parseInt($(this).attr("id"));
                 if(timeStatus < currentTime) {
                     $(this).addClass("past");
-                
+                } else if (timeStatus === currentHour) {
+                    $this.removeClass("past");
+                    $this.addClass("present");
+                }else {
+                    $(this).removeClass("past");
+                    $(this).removeClass("present");
+                    $(this).addClass("future");
                 }
             })
+            };
+
+            colorChange();
 
     </script>
   </body>
@@ -125,3 +134,4 @@
 <!--Help sources-->
 <!--Add a current time function: https://youtu.be/KRnkXgbbpzY-->
 <!--Bootstrap layouts and functions: Bootstrap.com-->
+<!--Font icon lookup: https://www.w3schools.com/icons/icons_reference.asp-->
