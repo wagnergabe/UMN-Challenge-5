@@ -32,52 +32,55 @@
       <h1 class="display-3 text-white">Work Day Scheduler</h1>
       <p class="lead mt-5">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+      <div id="clock"></div>
+      
+      
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <!--Mockup looks like from 9:00am to 5:00pm (9-12 blocks)-->
+      <!--"In the United States, Canada, United Kingdom, and Australia, the hours between 9 am and 5 pm (the traditional "9 to 5") are typically considered to be standard business hours."(wiki)-->
       <div class = "row">
-          <h2 class = "col-sm-2 hour">6:00AM</h2>
+          <h2 class = "col-sm-2 hour">9:00AM</h2>
           <textarea class ="description col-sm-8"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
       <div class = "row">
-          <h2 class = "col-sm-2 hour">7:00AM</h2>
+          <h2 class = "col-sm-2 hour">10:00AM</h2>
           <textarea class ="col-sm-8 bg-secondary"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
       <div class = "row">
-          <h2 class = "col-sm-2 hour" >8:00AM</h2>
+          <h2 class = "col-sm-2 hour" >11:00AM</h2>
           <textarea class ="col-sm-8"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
       <div class = "row">
-          <h2 class = "col-sm-2 hour">9:00AM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
-      </div>
-      <div class = "row">
-          <h2 class = "col-sm-2 hour">10:00AM</h2>
-          <textarea class ="col-sm-8 description"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
-      </div>
-      <div class = "row">
-          <h2 class = "col-sm-2 hour">11:00AM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
-          <button class="saveBtn col-sm-2 btn"></button>
-      </div>
-      <div class = "row">
-          <h2 class = "col-sm-2 hour">12:00PM</h2>
+          <h2 class = "col-sm-2 hour">12:00AM</h2>
           <textarea class ="col-sm-8 bg-secondary"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
       <div class = "row">
           <h2 class = "col-sm-2 hour">1:00PM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <textarea class ="col-sm-8 description"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
       <div class = "row">
           <h2 class = "col-sm-2 hour">2:00PM</h2>
+          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <button class="saveBtn col-sm-2 btn"></button>
+      </div>
+      <div class = "row">
+          <h2 class = "col-sm-2 hour">3:00PM</h2>
+          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <button class="saveBtn col-sm-2 btn"></button>
+      </div>
+      <div class = "row">
+          <h2 class = "col-sm-2 hour">4:00PM</h2>
+          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <button class="saveBtn col-sm-2 btn"></button>
+      </div>
+      <div class = "row">
+          <h2 class = "col-sm-2 hour">5:00PM</h2>
           <textarea class ="col-sm-8 bg-secondary"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
@@ -88,6 +91,10 @@
     </div>
     <script src="./assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> <!--moments.JS-->
+    <script>
+            var a = moment().toString();
+            document.getElementById("clock").innerHTML = a;
+    </script>
   </body>
 </html>
