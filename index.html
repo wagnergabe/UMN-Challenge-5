@@ -40,47 +40,47 @@
       <!-- Timeblocks go here -->
       <!--"In the United States, Canada, United Kingdom, and Australia, the hours between 9 am and 5 pm (the traditional "9 to 5") are typically considered to be standard business hours."(wiki)-->
       <div class = "row time-block">
-          <h2 class = "col-sm-2 hour">9:00AM</h2>
+          <h2 class = "col-sm-2 hour" id="9">9:00AM</h2>
           <textarea class ="description col-sm-9"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
-          <h2 class = "col-sm-2 hour">10:00AM</h2>
+          <h2 class = "col-sm-2 hour" id="10">10:00AM</h2>
           <textarea class ="col-sm-9 descrition"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
-      <div class = "row time-block">
-          <h2 class = "col-sm-2 hour" >11:00AM</h2>
+      <div class = "row time-block id =">
+          <h2 class = "col-sm-2 hour" id="11">11:00AM</h2>
           <textarea class ="descrition col-sm-9"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
-          <h2 class = "col-sm-2 hour">12:00AM</h2>
+          <h2 class = "col-sm-2 hour" id="12">12:00AM</h2>
           <textarea class ="col-sm-9 description"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
-          <h2 class = "col-sm-2 hour">1:00PM</h2>
+          <h2 class = "col-sm-2 hour" id="01">1:00PM</h2>
           <textarea class ="col-sm-9 description"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
-          <h2 class = "col-sm-2 hour">2:00PM</h2>
+          <h2 class = "col-sm-2 hour" id="02">2:00PM</h2>
           <textarea class ="col-sm-9 description"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
-          <h2 class = "col-sm-2 hour">3:00PM</h2>
+          <h2 class = "col-sm-2 hour" id="03">3:00PM</h2>
           <textarea class ="col-sm-9 description"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
-          <h2 class = "col-sm-2 hour">4:00PM</h2>
+          <h2 class = "col-sm-2 hour" id="04">4:00PM</h2>
           <textarea class ="col-sm-9 description"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
       <div class = "row time-block">
-          <h2 class = "col-sm-2 hour">5:00PM</h2>
+          <h2 class = "col-sm-2 hour" id="05">5:00PM</h2>
           <textarea class ="col-sm-9 description"></textarea>
           <button class="saveBtn col-sm-1 btn fas fa-save fa-2x"></button>
       </div>
@@ -107,13 +107,36 @@
             updateTime();
 
             //color changer
+            
+var today = moment().format('MMMM Do YYYY');
+$("clockEl").html(today);
+
+$(document).ready(function () {
+    $(".saveBtn").on("click", function () {
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
+
+        localStorage.setItem(time, text);
+    })  
+})  
+
+$("#9 .description").val(localStorage.getItem("9"));
+$("#9 .description").val(localStorage.getItem("10"));
+$("#9 .description").val(localStorage.getItem("11"));
+$("#9 .description").val(localStorage.getItem("12"));
+$("#9 .description").val(localStorage.getItem("01"));
+$("#9 .description").val(localStorage.getItem("02"));
+$("#9 .description").val(localStorage.getItem("03"));
+$("#9 .description").val(localStorage.getItem("04"));
+$("#9 .description").val(localStorage.getItem("05"));
+
             function colorChange() {
-            var currentTime = clockEl;
+            var currentTime = moment().hours();
             $(".time-block").each(function () {
                 var timeStatus = parseInt($(this).attr("id"));
                 if(timeStatus < currentTime) {
                     $(this).addClass("past");
-                } else if (timeStatus === currentHour) {
+                } else if (timeStatus === currentTime) {
                     $this.removeClass("past");
                     $this.addClass("present");
                 }else {
