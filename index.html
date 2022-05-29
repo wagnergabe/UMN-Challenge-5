@@ -39,49 +39,49 @@
     <div class="container">
       <!-- Timeblocks go here -->
       <!--"In the United States, Canada, United Kingdom, and Australia, the hours between 9 am and 5 pm (the traditional "9 to 5") are typically considered to be standard business hours."(wiki)-->
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour">9:00AM</h2>
           <textarea class ="description col-sm-8"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour">10:00AM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <textarea class ="col-sm-8 descrition"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour" >11:00AM</h2>
-          <textarea class ="col-sm-8"></textarea>
+          <textarea class ="descrition col-sm-8"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour">12:00AM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <textarea class ="col-sm-8 description"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour">1:00PM</h2>
           <textarea class ="col-sm-8 description"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour">2:00PM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <textarea class ="col-sm-8 description"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour">3:00PM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <textarea class ="col-sm-8 description"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour">4:00PM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <textarea class ="col-sm-8 description"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
-      <div class = "row">
+      <div class = "row time-block">
           <h2 class = "col-sm-2 hour">5:00PM</h2>
-          <textarea class ="col-sm-8 bg-secondary"></textarea>
+          <textarea class ="col-sm-8 description"></textarea>
           <button class="saveBtn col-sm-2 btn"></button>
       </div>
 
@@ -93,10 +93,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> <!--moments.JS-->
     <script>
+
+        //Time Function
             var clockEl = document.getElementById("currentDay");
 
             function updateTime () {
-            setInterval
             var now = moment();
             var timeDisplay = now.format('hh:mm:ssA');
             clockEl.textContent = timeDisplay;
@@ -104,6 +105,18 @@
             
             setInterval(updateTime, 1000);
             updateTime();
+
+            //color changer
+
+            var currentTime = clockEl;
+            $(".time-block").each(function () {
+                var timeStatus = parseInt($(this).attr("id"));
+                if(timeStatus < currentTime) {
+                    $(this).addClass("past");
+                
+                }
+            })
+
     </script>
   </body>
 </html>
@@ -111,3 +124,4 @@
 
 <!--Help sources-->
 <!--Add a current time function: https://youtu.be/KRnkXgbbpzY-->
+<!--Bootstrap layouts and functions: Bootstrap.com-->
